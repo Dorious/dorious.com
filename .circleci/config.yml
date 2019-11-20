@@ -3,10 +3,10 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    working_directory: /tmp
+    working_directory: /tmp/dorious.com
     steps:
       - checkout
       - run: npm install
       - run: npm run build
       - store_artifacts:
-          path: /tmp/public
+          path: /tmp/dorious.com/public
