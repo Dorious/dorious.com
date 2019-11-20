@@ -3,10 +3,15 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
+    branches:
+      only:
+      - master
+      - /rc-.*/
     working_directory: /tmp/dorious.com
     steps:
-      - checkout
-      - run: npm install
-      - run: npm run build
-      - store_artifacts:
-          path: /tmp/dorious.com/public
+    - checkout
+    - run: npm install
+    - run: npm run test
+    - run: npm run build
+    - store_artifacts:
+        path: /tmp/dorious.com/public
