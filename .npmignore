@@ -1,7 +1,8 @@
 __mocks__/
 .circleci/
+.cache/
 src/
-gatsby-
+gatsby-*.js
 .prettierrc
 jest-preprocess.js
 jest.config.js
