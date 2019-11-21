@@ -26,13 +26,28 @@ const IndexPage = () => (
           }
         `}
         render={data => {
-          console.log('data', data); 
-          return <Img 
-            className="my-face-wrapper" 
-            imgStyle={{width: 'auto', position: 'relative'}}
-            placeholderStyle={{position: 'absolute', transitionDelay: 0}}
-            fluid={data.placeholderImage.childImageSharp.fluid} 
-          />
+          return (<div className="my-face-container">
+            <Img 
+              className="my-face-wrapper" 
+              imgStyle={{width: 'auto', position: 'relative'}}
+              placeholderStyle={{position: 'absolute', transitionDelay: 0, top: 'auto', left: 'auto'}}
+              fluid={data.placeholderImage.childImageSharp.fluid} 
+            >Test</Img>
+            <Img 
+              className="my-face-anim my-face-blue" 
+              imgStyle={{width: 'auto', position: 'relative'}}
+              placeholderStyle={{display: 'none'}}
+              fluid={data.placeholderImage.childImageSharp.fluid} 
+              fadeIn={false}
+            />
+            <Img 
+              className="my-face-anim my-face-red" 
+              imgStyle={{width: 'auto', position: 'relative'}}
+              placeholderStyle={{display: 'none'}}
+              fluid={data.placeholderImage.childImageSharp.fluid} 
+              fadeIn={false}
+            />
+          </div>)
         }}
       />
     </div>

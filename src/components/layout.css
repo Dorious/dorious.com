@@ -16,13 +16,23 @@ body {
   text-align: center;
 }
 
-.my-face-wrapper {
+.my-face-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.my-face-wrapper, .my-face-anim {
   height: 100%;
   min-height: 320px;
   display: inline-block;
+  margin-left: -6%;
 }
 
-.my-face-wrapper > div {
+.my-face-wrapper > div,
+.my-face-anim > div {
   display: none;
 }
 
@@ -41,6 +51,42 @@ body {
   animation-iteration-count: infinite;
 }
 
+.my-face-anim {
+  position: absolute ! important;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.my-face-blue {
+  opacity: 0;
+  left: 0;
+  filter: brightness(0.5) sepia(1) hue-rotate(150deg) saturate(6);
+  animation: blue 5.9s ease-in 0s infinite;
+}
+
+.my-face-red {
+  opacity: 0;
+  left: 0;
+  filter: brightness(0.5) sepia(1) hue-rotate(-10deg) saturate(6);
+  animation: red 6s ease-in 0s infinite;
+}
+
+@keyframes blue {
+  0%, 80% { opacity: 0; left: 0px; z-index: auto; }
+  85% { opacity: 0.4; left: -18px; z-index: -1; }
+  91% { opacity: 0.1; left: -12px; z-index: auto;}
+  96% { opacity: 0.3; left: -14px; z-index: -1;}
+  100% { opacity: 0; left: 0px; z-index: auto;}
+}
+
+@keyframes red {
+  0%, 80% { opacity: 0; left: 0px; z-index: auto; }
+  86% { opacity: 0.3; left: 18px; z-index: -1;}
+  90% { opacity: 0.1; left: 10px; z-index: auto; }
+  94% { opacity: 0.3; left: 17px; z-index: -1; }
+  100% { opacity: 0; left: 0px; z-index: auto; }
+}
 
 @keyframes noise {
   0% { background-position: 50% 50%; }
