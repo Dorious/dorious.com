@@ -2,8 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import "../components/layout.css"
 import Img from "gatsby-image"
-
-import "../images/grey-background.png";
+import SEO from "../components/seo"
 
 /* const IndexPage = () => (
   <Layout>
@@ -18,8 +17,11 @@ import "../images/grey-background.png";
   </Layout>
 ) */
 
+const keywords = [`web`, `webapplication`, `photography`, 'headshots']
+
 const IndexPage = () => (
   <div>
+    <SEO title="Dariusz Arciszewski" keywords={keywords} />
     <div className="my-face">
       <StaticQuery
         query={graphql`
