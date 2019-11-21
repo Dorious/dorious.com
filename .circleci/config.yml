@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+    - image: circleci/node:latest
     branches:
       only:
       - master
@@ -11,11 +11,18 @@ jobs:
     steps:
     - checkout
     - run: 
-        name: Install NPM Modules
+        name: Install NPM modules
         command: npm install
-    - run: npm run test
+    - run: 
+        name: Run some tests
+        command: npm run test
     - run: npm run build
-    - run: npm pack
+    - run: 
+        name: Packing
+        command: npm pack
+    - add_ssh_keys:
+        fingerprints:
+        - "31:5c:55:de:71:33:ee:83:ad:fc:51:dd:86:33:52:41"
     - run: 
         name: Deployment to server
         command: scp -oStrictHostKeyChecking=no dorious.com-*.tgz cirleci@dorious.com:/home/circleci
