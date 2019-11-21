@@ -3,6 +3,7 @@ __mocks__/
 .cache/
 src/
 gatsby-*.js
+*.js
 .prettierrc
 jest-preprocess.js
 jest.config.js
