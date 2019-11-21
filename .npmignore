@@ -1,0 +1,9 @@
+__mocks__/
+.circleci/
+src/
+gatsby-
+.prettierrc
+jest-preprocess.js
+jest.config.js
+README.md
+
