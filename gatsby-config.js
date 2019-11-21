@@ -18,11 +18,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `dorious-com`,
+        short_name: `dorious`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#1d1d1d`,
+        theme_color: `#1d1d1d`,
         display: `minimal-ui`,
         //icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -33,7 +33,7 @@ module.exports = {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-8295657-9",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        head: true,
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
