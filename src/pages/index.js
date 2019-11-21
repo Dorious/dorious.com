@@ -23,6 +23,7 @@ const IndexPage = () => (
   <div>
     <SEO title="Dariusz Arciszewski" keywords={keywords} />
     <div className="my-face">
+      <div className="my-face-noise" />
       <StaticQuery
         query={graphql`
           query {

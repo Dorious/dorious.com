@@ -25,3 +25,26 @@ body {
 .my-face-wrapper > div {
   display: none;
 }
+
+.my-face-noise {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  background: url(../images/grey-noise.png) 50% 50%;
+  opacity: 0.075;
+  pointer-events: none;
+  animation-name: noise;
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes noise {
+  0% { background-position: 50% 50%; }
+  25% { background-position: -25% 40%; }
+  50% { background-position: 30% -60%; }
+  75% { background-position: -45% 100%; }
+}
