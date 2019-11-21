@@ -15,18 +15,17 @@ jobs:
     - run: 
         name: Run some tests
         command: npm run test
-    - run: npm run build
+    - run: 
+        name: Building
+        command: npm run build
     - run: 
         name: Packing
         command: npm pack
-    # - add_ssh_keys:
-    #     fingerprints:
-    #     - "31:5c:55:de:71:33:ee:83:ad:fc:51:dd:86:33:52:41"
     - run: 
-        name: Deployment to server
+        name: Deploying to the server
         command: 
           scp -oStrictHostKeyChecking=no dorious.com-*.tgz circleci@dorious.com:/home/circleci && 
-          ssh circleci@dorious.com "tar -zxvf dorious.com-* && rsync --delete -r package/ /var/www/dorious.com/"
+          ssh circleci@dorious.com "tar -zxvf dorious.com-* && rsync --delete -r package/public /var/www/dorious.com/"
     - run:
         name: Clean up
         command:
