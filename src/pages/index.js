@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
+import "../components/layout.css"
+import Img from "gatsby-image"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import "../images/grey-background.png";
 
-const IndexPage = () => (
+/* const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Hi people</h1>
@@ -16,6 +16,32 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
+) */
+
+const IndexPage = () => (
+  <div>
+    <div className="my-face">
+      <StaticQuery
+        query={graphql`
+          query {
+            placeholderImage: file(relativePath: { eq: "me-2019-hq.png" }) {
+              childImageSharp {
+                fluid(maxHeight: 1024, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        `}
+        render={data => <Img 
+          className="my-face-wrapper" 
+          imgStyle={{width: 'auto', position: 'relative'}}
+          placeholderStyle={{position: 'absolute', transitionDelay: 0}}
+          fluid={data.placeholderImage.childImageSharp.fluid} 
+        />}
+      />
+    </div>
+  </div>
 )
 
 export default IndexPage
