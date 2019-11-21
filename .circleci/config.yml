@@ -28,4 +28,4 @@ jobs:
         command: ssh-add -l -EMD5
     - run: 
         name: Deployment to server
-        command: scp -oStrictHostKeyChecking=no dorious.com-*.tgz circleci@dorious.com:/home/circleci
+        command: scp -oStrictHostKeyChecking=no -v dorious.com-*.tgz circleci@dorious.com:/home/circleci
