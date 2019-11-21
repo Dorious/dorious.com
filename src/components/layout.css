@@ -62,7 +62,7 @@ body {
   opacity: 0;
   left: 0;
   filter: brightness(0.6) sepia(1) hue-rotate(150deg) saturate(8);
-  animation: blue 7s ease-in 0s infinite;
+  animation: blue_face 7s ease-in 0s infinite;
   transform: scaleX(0);
 }
 
@@ -70,11 +70,11 @@ body {
   opacity: 0;
   left: 0;
   filter: brightness(0.6) sepia(1) hue-rotate(-10deg) saturate(8);
-  animation: red 7s ease-in 0.1s infinite;
+  animation: red_face 7s ease-in 0.1s infinite;
   transform: scaleX(1);
 }
 
-@keyframes blue {
+@keyframes blue_face {
   0%, 90% { opacity: 0; left: 0px; z-index: auto; }
   93% { opacity: 0.3; left: -1.6%; transform: scaleX(1.05); z-index: -1; }
   95% { opacity: 0.1; left: -1%; z-index: auto; transform: scaleX(0.9) }
@@ -82,7 +82,7 @@ body {
   100% { opacity: 0; left: 0px; z-index: auto; transform: scaleX(1) }
 }
 
-@keyframes red {
+@keyframes red_face {
   0%, 90% { opacity: 0; left: 0px; z-index: auto; }
   92.5% { opacity: 0.3; left: 1.6%; z-index: -1; transform: scaleX(1.1) }
   95.5% { opacity: 0.1; left: 1%; z-index: auto; transform: scaleX(0.9) }
