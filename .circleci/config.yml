@@ -23,6 +23,9 @@ jobs:
     - add_ssh_keys:
         fingerprints:
         - "31:5c:55:de:71:33:ee:83:ad:fc:51:dd:86:33:52:41"
+    - run:
+        name: just for test
+        command: ssh-add -l -EMD5
     - run: 
         name: Deployment to server
         command: scp -oStrictHostKeyChecking=no dorious.com-*.tgz circleci@dorious.com:/home/circleci
