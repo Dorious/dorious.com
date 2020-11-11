@@ -57,7 +57,7 @@ const IndexPage = () => {
       <div className="my-description">
         <Marquee text={[
           'Hi! My name is',
-          'Dariusz Arciszewski',
+          <h1>Dariusz Arciszewski</h1>,
           'and I do',
           // 'Frontend Development',
           'JavaScript Development',
