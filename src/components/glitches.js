@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from "react";
 
 import "./glitches.less";
 
-export const DEFAULT_GLITCHES = 20;
+export const DEFAULT_GLITCHES = 14;
 
 function Glitches({children, glitches = DEFAULT_GLITCHES}) {
   const [ id, setId ] = useState();
@@ -19,7 +19,7 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
   useEffect(() => {
     setTimeout(() => {
       setCounter(counter+1);
-    }, 100);
+    }, 100+(Math.random()*40));
   }, [counter]);
 
   return <div className="glitches">
@@ -31,21 +31,21 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
             const currentHeight = (100 / glitches) * (1 - (Math.random()*1));
             prevTop = currentTop;
 
-            return <rect 
-              width="100%" 
-              height={`${currentHeight}%`}
-              key={key}
-              style={{
-                fill: "rgb(255,255,255)"
-              }} 
-              x={0}
-              y={`${currentTop}%`}
-            />
+            return (
+              <rect 
+                width="100%" 
+                height={`${currentHeight}%`}
+                key={key}
+                style={{fill: `rgb(255,255,255)`, display: Math.random() < 0.5 ? 'none' : '' }} 
+                x={0}
+                y={`${currentTop}%`}
+              />
+            )
           })}
         </clipPath>
       </defs>
     </svg>
-    <span style={{clipPath: `url(#${id})`}}>{children}</span>
+    <span style={{clipPath: `url(#${id})`, transform: `translateX(${Math.random()*1}rem)`}}>{children}</span>
   </div>
 }
 

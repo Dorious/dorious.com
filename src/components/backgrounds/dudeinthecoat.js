@@ -14,7 +14,7 @@ export default function DudeInTheCoat() {
           query {
             placeholderImage: file(relativePath: { eq: "me-2019-hq.png" }) {
               childImageSharp {
-                fluid(maxHeight: 1440, quality: 90) {
+                fluid(maxHeight: 1080, quality: 85) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
