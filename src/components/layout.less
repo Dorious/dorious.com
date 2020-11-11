@@ -1,0 +1,106 @@
+body {
+  background: url(../images/grey-background.png) #1d1d1d;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  font-size: 1.4vh;
+  transition: font-size 0.5s ease;
+}
+
+html, body {
+  height: 100%;
+}
+
+.space {
+  perspective: 900px;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  /* transition: all 0.5s ease-out; */
+}
+
+.my-description {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  z-index: 1;
+  transform: translateZ(1rem);
+
+  & .marquee-line {
+    perspective: 900px;
+    perspective-origin: 0 50%;
+  }
+}
+
+.my-qr {
+  position: absolute;
+  top: 33rem;
+  left: 50%;
+  margin-left: 7rem;
+  z-index: 2;
+  transform: translateZ(1.7rem);
+
+  svg {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+.my-icons {
+  font-size: 4rem;
+  position: absolute;
+  top: 33rem;
+  left: 50%;
+  margin-left: 32rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+  transform: translateZ(1.3rem);
+
+  & > a {
+    display: inline-flex;
+    color: #fff;
+    width: 4rem;
+    overflow: hidden;
+
+    & > span {
+      transition: width 0.3s ease-in-out;
+      overflow: hidden;
+    }
+
+    & > span:first-child {
+      width: 0%;
+    }
+
+    & > span:last-child {
+      width: 100%;
+      opacity: 0.5;
+      position: relative;
+
+      & > svg {
+        position: absolute;
+        right:0;
+        top: 0;
+      }
+    }
+
+    &:hover {
+      & > span:first-child {
+        width: 100%;
+      }
+
+      & > span:last-child {
+        opacity: 0.7;
+        width: 0%;
+      }
+    }
+  }
+}
+
+

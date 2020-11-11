@@ -1,0 +1,46 @@
+@max-width: 55%;
+
+.image-overrides() {
+  & > picture > img {
+    width: auto ! important;
+    right: 0;
+    left: auto ! important;
+  }
+}
+
+.dudeinthecoat {
+  &-container {
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &-wrapper {
+    max-width: @max-width;
+    height: 100%;
+
+    .image-overrides;
+  }
+
+  &-blue, &-red {
+    position: absolute ! important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: @max-width;
+    opacity: 0.3;
+
+    .image-overrides;
+  }
+
+  &-blue {
+    filter: brightness(0.6) sepia(1) hue-rotate(150deg) saturate(8);
+    transform: translateX(-1.5rem);
+  }
+
+  &-red {
+    filter: brightness(0.6) sepia(1) hue-rotate(-10deg) saturate(8);
+    transform: translateX(1.5rem);
+  }
+
+}
