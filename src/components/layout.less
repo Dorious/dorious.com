@@ -23,6 +23,13 @@ html, body {
   transition: all 1s ease-out;
 }
 
+@-moz-document url-prefix() { 
+  .space {
+    transition: none;
+    perspective: none;
+  }
+}
+
 .my-description {
   position: absolute;
   top: 10rem;
@@ -33,20 +40,6 @@ html, body {
   & .marquee-line {
     perspective: 900px;
     perspective-origin: 0 50%;
-  }
-}
-
-.my-qr {
-  position: absolute;
-  top: 33rem;
-  left: 50%;
-  margin-left: 7rem;
-  z-index: 2;
-  transform: translateZ(1.7rem);
-
-  svg {
-    height: 20rem;
-    width: 20rem;
   }
 }
 

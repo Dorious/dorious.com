@@ -7,26 +7,16 @@ import {
   InstagramFilled,
   InstagramOutlined 
 } from "@ant-design/icons";
-import QRCode from "qrcode-svg";
-import InlineSVG from "svg-inline-react";
 
 import SEO from "../components/seo";
 import Marquee from "../components/marquee";
 import Noise from "../components/noise";
 import Backgrounds from "../components/backgrounds";
+import Qr from "../components/qr";
 
 import "../components/layout.less"
-import vcard from 'raw-loader!../../static/vcard.vcf';
 
 const keywords = [`web`, `webapps`, `mobileapps`, `webapplication`, `photography`, 'headshots']
-
-var SvgQr = new QRCode({
-  content: vcard,
-  padding: 1,
-  background: '#fff',
-  color: '#1d1d1d',
-  container: 'svg-viewbox'
-}).svg();
 
 let timeout = 0;
 
@@ -68,11 +58,7 @@ const IndexPage = () => {
           'Headshot Photography', */
         ]} />
       </div>
-      <div className="my-qr">
-        <a href="/vcard.vcf">
-          <InlineSVG src={SvgQr} />
-        </a>
-      </div>
+      <Qr />
       <div className="my-icons">
         <a href="https://www.linkedin.com/in/dorious/" rel="noreferrer" target="_blank">
           <LinkedinFilled />
