@@ -18,7 +18,7 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
   useEffect(() => {
     const interval = setTimeout(() => {
       setCounter(counter+1);
-    }, 60);
+    }, 100);
   }, [counter]);
 
   return <div className="glitches">
@@ -26,7 +26,7 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
       <defs>
         <clipPath id={id}>
           {new Array(glitches).fill('').map((glitch, key) => {
-            const currentTop = prevTop + (100 / glitches) * (1 - (Math.random()*0.5));
+            const currentTop = prevTop + (100 / glitches);
             const currentHeight = (100 / glitches) * (1 - (Math.random()*1));
             prevTop = currentTop;
 
