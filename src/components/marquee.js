@@ -15,6 +15,15 @@ function Marquee({text = '', className = ''}) {
   useEffect(() => {
     if(!anim) setTimeout(() => setAnim(true));
   }, [anim, css, setAnim]);
+
+  if(!anim)
+    return (
+      <div className={`marquee marquee-initial`}>
+        {texts.map((txt, key) => {
+          return <p key={key}>{txt}</p>
+        })}
+      </div>
+    );
   
   const renderedTexts = texts.map((txt, key) => {
     let addDelay = 0;
