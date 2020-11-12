@@ -19,7 +19,7 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
   useEffect(() => {
     setTimeout(() => {
       setCounter(counter+1);
-    }, 100+(Math.random()*40));
+    }, 50+(Math.random()*40));
   }, [counter]);
 
   return <div className="glitches">
@@ -36,7 +36,7 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
                 width="100%" 
                 height={`${currentHeight}%`}
                 key={key}
-                style={{fill: `rgb(255,255,255)`, display: Math.random() < 0.5 ? 'none' : '' }} 
+                style={{fill: `rgb(255,255,255)`, display: Math.random() < 0.75 ? 'none' : '' }} 
                 x={0}
                 y={`${currentTop}%`}
               />
