@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 
 import SEO from "../components/seo";
-import Marquee from "../components/marquee";
+import Description from "../components/description";
 import Noise from "../components/noise";
 import Backgrounds from "../components/backgrounds";
 import Qr from "../components/qr";
@@ -42,22 +42,12 @@ const IndexPage = () => {
   });
 
   return (
-    <div className="space" style={{perspectiveOrigin: `${perc[0]*100}% ${perc[1]*100}%`}}>
+    <div 
+      className="space" 
+      style={{perspectiveOrigin: `${perc[0]*100}% ${perc[1]*100}%`}}
+    >
       <SEO title="Dariusz Arciszewski" keywords={keywords} />
-      <div className="my-description">
-        <Marquee text={[
-          'Hi! My name is',
-          <h1>Dariusz Arciszewski</h1>,
-          'and I do',
-          // 'Frontend Development',
-          'JavaScript Development',
-          /* 'Web Development',
-          'Web Applications',
-          'Software Architecture',
-          'Portrait Photography',
-          'Headshot Photography', */
-        ]} />
-      </div>
+      <Description />
       <Qr />
       <div className="my-icons">
         <a href="https://www.linkedin.com/in/dorious/" rel="noreferrer" target="_blank">

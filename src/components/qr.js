@@ -14,6 +14,7 @@ const SvgQr = new QRCode({
   container: 'svg-viewbox',
   ecl: "L",
   join: true,
+  swap: true,
 }).svg();
 
 export default function Qr() {
