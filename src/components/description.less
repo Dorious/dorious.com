@@ -12,12 +12,21 @@
     perspective-origin: 0 50%;
   }
 
+  @media (max-aspect-ratio: @responsive-aspect-step1) {
+    left: 38%;
+  }
+
   @media (max-aspect-ratio: @responsive-aspect-step3) {
     left: 3rem;
     right: 3rem;
     top: auto;
-    bottom: 34rem;
+    bottom: 32rem;
     display: flex;
     justify-content: center;
+
+    & .marquee-line {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

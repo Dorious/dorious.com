@@ -12,7 +12,7 @@ html {
   font-size: 1.4vh;
   transition: font-size 0.5s ease;
 
-  @media (max-aspect-ratio: @responsive-aspect-step3) {
+  @media (max-aspect-ratio: @responsive-aspect-step4) {
     font-size: 1.4vw;
   }
 }
@@ -24,8 +24,11 @@ html, body {
 .space {
   perspective: 100rem;
   transform-style: preserve-3d;
-  position: relative;
-  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
   transition: all 1s ease-out;
 }

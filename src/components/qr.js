@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import InlineSVG from "svg-inline-react";
 import QRCode from "qrcode-svg";
 
-import vcard from 'raw-loader!../../static/vcard.vcf';
+import content from 'raw-loader!../../static/vcard.vcf';
 
 import "./qr.less";
 
 const SvgQr = new QRCode({
-  content: vcard,
+  content,
   padding: 1,
   background: '#fff',
   color: '#1d1d1d',

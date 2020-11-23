@@ -1,3 +1,5 @@
+@import "../variables.less";
+
 .qr {
   position: absolute;
   top: 36rem;
@@ -5,6 +7,12 @@
   margin-left: 9rem;
   z-index: 2;
   transform: translateZ(1.7rem);
+
+  @media (max-aspect-ratio: @responsive-aspect-step3) {
+    top: auto;
+    margin-left: -17rem;
+    bottom: 7rem;
+  }
 
   svg {
     height: 20rem;

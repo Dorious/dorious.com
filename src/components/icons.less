@@ -1,3 +1,5 @@
+@import "../variables.less";
+
 .icons {
   font-size: 4rem;
   position: absolute;
@@ -10,6 +12,12 @@
   justify-content: space-between;
   z-index: 3;
   transform: translateZ(1.3rem);
+
+  @media (max-aspect-ratio: @responsive-aspect-step3) {
+    top: auto;
+    margin-left: 7rem;
+    bottom: 7rem;
+  }
 
   & > a {
     display: inline-flex;
