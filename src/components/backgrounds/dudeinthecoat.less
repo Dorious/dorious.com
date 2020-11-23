@@ -1,4 +1,6 @@
+@import '../../variables';
 @max-width: 54%;
+@max-width-square: 60%;
 
 .image-overrides() {
   & > picture > img {
@@ -20,6 +22,10 @@
     max-width: @max-width;
     height: 100%;
 
+    @media (max-aspect-ratio: @responsive-aspect-step1) {
+      max-width: @max-width-square ! important;
+    }
+
     .image-overrides;
   }
 
@@ -31,11 +37,14 @@
     width: @max-width;
     opacity: 0.5;
 
+    @media (max-aspect-ratio: @responsive-aspect-step1) {
+      width: @max-width-square ! important;
+    }
+
     .image-overrides;
   }
 
   &-blue {
-    //filter: brightness(0.6) sepia(1) hue-rotate(150deg) saturate(8);
     filter: brightness(0.6) sepia(1) hue-rotate(270deg) saturate(8);
     transform: translateX(-2rem);
   }

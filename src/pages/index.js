@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { 
-  LinkedinFilled, 
-  LinkedinOutlined, 
-  GithubFilled,
-  GithubOutlined,
-  InstagramFilled,
-  InstagramOutlined 
-} from "@ant-design/icons";
 
 import SEO from "../components/seo";
 import Description from "../components/description";
 import Noise from "../components/noise";
 import Backgrounds from "../components/backgrounds";
 import Qr from "../components/qr";
+import Icons from "../components/icons";
 
 import "../components/layout.less"
 
@@ -50,20 +43,7 @@ const IndexPage = () => {
         <SEO title="Dariusz Arciszewski" keywords={keywords} />
         <Description />
         <Qr />
-        <div className="my-icons">
-          <a href="https://www.linkedin.com/in/dorious/" rel="noreferrer" target="_blank">
-            <LinkedinFilled />
-            <LinkedinOutlined />
-          </a>
-          <a href="https://github.com/Dorious" rel="noreferrer" target="_blank">
-            <GithubFilled />
-            <GithubOutlined />
-          </a>
-          <a href="https://www.instagram.com/darius.arc/" rel="noreferrer" target="_blank">
-            <InstagramFilled />
-            <InstagramOutlined />
-          </a>
-        </div>
+        <Icons />
         <Backgrounds />
       </div>
       <Noise />

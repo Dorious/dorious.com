@@ -1,9 +1,11 @@
 import React from 'react';
 import Marquee from "../components/marquee";
 
+import "./description.less";
+
 export default function Description() {
   return (
-    <div className="my-description">
+    <div className="description">
       <Marquee text={[
         'Hi! My name is',
         <h1>Dariusz Arciszewski</h1>,

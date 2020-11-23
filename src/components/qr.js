@@ -18,10 +18,8 @@ const SvgQr = new QRCode({
 }).svg();
 
 export default function Qr() {
-  const svg = useRef();
-
   return (
-    <div className="qr" ref={svg}>
+    <div className="qr">
       <a href="/vcard.vcf">
         <InlineSVG src={SvgQr} />
       </a>
