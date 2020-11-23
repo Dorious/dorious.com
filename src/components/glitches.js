@@ -4,17 +4,9 @@ import "./glitches.less";
 
 export const DEFAULT_GLITCHES = 14;
 
-function Glitches({children, glitches = DEFAULT_GLITCHES}) {
-  const [ id, setId ] = useState();
+function GlitchSvg({id, glitches = DEFAULT_GLITCHES}) {
   const [ counter, setCounter ] = useState(0);
-
   let prevTop = 0;
-
-  useEffect(() => {
-    if(!id) {
-      setId(`glitch-${Math.random().toString(36).substring(7)}`);
-    }
-  }, [id, setId]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +14,7 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
     }, 50+(Math.random()*40));
   }, [counter]);
 
-  return <div className="glitches">
+  return (
     <svg>
       <defs>
         <clipPath id={id}>
@@ -45,8 +37,24 @@ function Glitches({children, glitches = DEFAULT_GLITCHES}) {
         </clipPath>
       </defs>
     </svg>
-    <span style={{clipPath: `url(#${id})`, transform: `translateX(${Math.random()*1}rem)`}}>{children}</span>
-  </div>
+  )
+}
+
+function Glitches({children, glitches = DEFAULT_GLITCHES}) {
+  const [ id, setId ] = useState();
+
+  useEffect(() => {
+    if(!id) {
+      setId(`glitch-${Math.random().toString(36).substring(7)}`);
+    }
+  }, [id, setId]);
+
+  return (
+    <div className="glitches">
+      <GlitchSvg glitches={glitches} id={id} />
+      <span style={{clipPath: `url(#${id})`, transform: `translateX(${Math.random()*1}rem)`}}>{children}</span>
+    </div>
+  )
 }
 
 export default memo(Glitches);
