@@ -1,13 +1,20 @@
 @import '../../variables';
 @max-width: 54%;
 @max-width-square: 60%;
+@max-width-mobile: 100%;
 
 .image-overrides() {
   & > picture > img {
     width: auto ! important;
     right: 0;
     left: auto ! important;
+
+    @media (max-aspect-ratio: @responsive-aspect-step3) {
+      position: relative ! important;
+      right: auto;
+    }
   }
+  
 }
 
 .dudeinthecoat {
@@ -22,8 +29,17 @@
     max-width: @max-width;
     height: 100%;
 
+    & > div {
+      display: none;
+    }
+
     @media (max-aspect-ratio: @responsive-aspect-step1) {
-      max-width: @max-width-square ! important;
+      max-width: @max-width-square;
+    }
+
+    @media (max-aspect-ratio: @responsive-aspect-step3) {
+      max-width: @max-width-mobile;
+      text-align: center;
     }
 
     .image-overrides;
@@ -37,8 +53,17 @@
     width: @max-width;
     opacity: 0.5;
 
+    & > div {
+      display: none;
+    }
+
     @media (max-aspect-ratio: @responsive-aspect-step1) {
-      width: @max-width-square ! important;
+      width: @max-width-square;
+    }
+
+    @media (max-aspect-ratio: @responsive-aspect-step3) {
+      width: @max-width-mobile;
+      text-align: center;
     }
 
     .image-overrides;
