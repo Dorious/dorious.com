@@ -52,6 +52,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `/dorious-512.jpg`
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
