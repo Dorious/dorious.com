@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import Multiline from "./multiline";
 
@@ -17,18 +17,6 @@ export default function Description() {
           <h3 aria-label="Headshot Photography">Headshot Photography</h3>
         ]} 
       />
-      {/* <Marquee text={[
-        'Hi! My name is',
-        <h1>Dariusz Arciszewski</h1>,
-        'and I do',
-        // 'Frontend Development',
-        'JavaScript Development',
-        /* 'Web Development',
-        'Web Applications',
-        'Software Architecture',
-        'Portrait Photography',
-        'Headshot Photography',
-      ]} /> */}
     </div>
   )
 };

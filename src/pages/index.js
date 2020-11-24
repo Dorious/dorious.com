@@ -7,9 +7,9 @@ import Backgrounds from "../components/backgrounds";
 import Qr from "../components/qr";
 import Icons from "../components/icons";
 
-import "../components/layout.less"
+import "../html.less";
 
-const keywords = [`web`, `webapps`, `mobileapps`, `webapplication`, `photography`, 'headshots']
+const keywords = [`web`, `web apps`, `mobile apps`, `web applications`, `websites`, `photography`, 'headshots', `headshot photography`];
 
 let timeout = 0;
 
