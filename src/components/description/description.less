@@ -28,9 +28,14 @@
   &-marquee {
     .marquee-line {
       opacity: 0.6;
+      z-index: -1;
 
       &:last-child {
         opacity: 1;
+      }
+
+      & > span {
+        text-shadow: 0 0 1rem rgba(29,29,29,1);
       }
     }
 
