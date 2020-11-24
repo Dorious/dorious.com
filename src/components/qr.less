@@ -7,6 +7,28 @@
   margin-left: 9rem;
   z-index: 2;
   transform: translateZ(1.7rem);
+  perspective: 100rem;
+  perspective-origin: 50% 0;
+
+  & > a {
+    display: block;
+    transform-origin: 50% 0;
+    transform: rotateX(90deg);
+    animation: qrOpen 3s ease-in-out 2s 1 normal forwards;
+    color: #fff;
+
+    &::after {
+      content: '▲ download vcard';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      transform-origin: 50% 0;
+      transform: rotateX(90deg);
+      animation: vcardOpen 0.5s ease 4s 1 normal forwards;
+    }
+  }
 
   @media (max-aspect-ratio: @responsive-aspect-step3) {
     top: auto;
@@ -18,4 +40,20 @@
     height: 20rem;
     width: 20rem;
   }
+}
+
+@keyframes qrOpen {
+  0% { transform: rotateX(90deg); }
+  20% { transform: rotateX(-25deg); }
+  30% { transform: rotateX(18deg); }
+  50% { transform: rotateX(-8deg); }
+  60% { transform: rotateX(5deg); }
+  80% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes vcardOpen {
+  0% { transform: rotateX(90deg); }
+  50% { trasform: rotateX(-20deg); }
+  100% { transform: rotate(0deg); }
 }
