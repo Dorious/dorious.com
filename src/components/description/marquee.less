@@ -1,0 +1,75 @@
+@prefix: marquee;
+
+.@{prefix} {
+  position: relative;
+  display: inline-block;
+
+  &-line {
+    margin-top: -1.4rem;
+    overflow: hidden;
+    height: 6rem;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 0;
+
+    & > span {
+      display: inline-block;
+      position: relative;
+      transform: translateY(6rem) scale(0.5);
+      transition: transform 0.5s ease-in-out;
+      margin-left: -0.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      & > span {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        user-select: none;
+      }
+    }
+    
+
+    &-1, &-2, &-3 {
+      opacity: 0.6;
+    }
+  }
+
+  &-initial {
+    visibility: hidden;
+  }
+
+  &-animate {
+    .marquee-line {
+      & > span {
+        animation: bubbleChar 0.4s ease;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+span.@{prefix} {
+  &-char {
+    &-animate {
+      animation: none ! important;
+      transform: translateY(0) scale(1) ! important;
+
+      &-transform {
+        transform: translateY(-6rem) scale(1) ! important;
+      }
+    }
+  }
+}
+
+@keyframes bubbleChar {
+  0% { transform: translateY(6rem); }
+  100% {  transform: translateY(0) scale(1); }
+} 
+
+@keyframes scrollChar {
+  0% { transform: translateY(0rem) ! important; }
+  100% { transform: translateY(-6rem) ! important; }
+}

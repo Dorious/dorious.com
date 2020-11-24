@@ -4,7 +4,7 @@
   .anim-delay(@n - 1);
 
   &:nth-child(@{n}) {
-    animation-delay: unit(2 + @n * 0.2, s);
+    animation-delay: unit(2.2 + @n * 0.3, s);
   }
 }
 
@@ -27,12 +27,12 @@
 
   @media (max-aspect-ratio: @responsive-aspect-step3) {
     top: auto;
-    margin-left: 11rem;
+    margin-left: 14rem;
     bottom: 7rem;
   }
 
   @keyframes iconOpen {
-    80% { opacity: 1; transform: scale(1.1); }
+    80% { opacity: 1; transform: scale(1.15); }
     100% { opacity: 1; transform: scale(1); }
   }
 
@@ -42,8 +42,8 @@
     width: 5rem;
     overflow: hidden;
     opacity: 0;
-    animation: iconOpen 0.5s ease-in-out 2s 1 normal forwards;
-    transform-origin: 50% 150%;
+    animation: iconOpen 0.7s ease-out 2.5s 1 normal forwards;
+    transform-origin: 50% -2rem;
     transform: scale(0.5);
 
     .anim-delay(3);

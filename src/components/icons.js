@@ -25,15 +25,24 @@ export function Icon({ children, ...rest }) {
 export default memo(function Icons() {
   return (
     <div className="icons">
-      <Icon href="https://www.linkedin.com/in/dorious/">
+      <Icon 
+        href="https://www.linkedin.com/in/dorious/"
+        title="Check me out on LinkedIN"
+      >
         <LinkedinFilled />
         <LinkedinOutlined />
       </Icon>
-      <Icon href="https://github.com/Dorious">
+      <Icon 
+        href="https://github.com/Dorious"
+        title="Check me out on GitHub"
+      >
         <GithubFilled />
         <GithubOutlined />
       </Icon>
-      <Icon href="https://www.instagram.com/darius.arc/">
+      <Icon 
+        href="https://www.instagram.com/darius.arc/" 
+        title="Check me out on Instagram"
+      >
         <InstagramFilled />
         <InstagramOutlined />
       </Icon>

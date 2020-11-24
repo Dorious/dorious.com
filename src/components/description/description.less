@@ -1,0 +1,42 @@
+@import "../../variables.less";
+
+.description {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  z-index: 1;
+  transform: translateZ(1rem);
+
+  @media (max-aspect-ratio: @responsive-aspect-step1) {
+    left: 38%;
+  }
+
+  @media (max-aspect-ratio: @responsive-aspect-step3) {
+    left: 3rem;
+    right: 3rem;
+    top: auto;
+    bottom: 36rem;
+    display: flex;
+    justify-content: center;
+
+    & .marquee-line {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &-marquee {
+    .marquee-line {
+      opacity: 0.6;
+
+      &:last-child {
+        opacity: 1;
+      }
+    }
+
+    .marquee-line.totheback {
+      font-size: 4rem;
+      height: 5rem;
+    }
+  }
+}
