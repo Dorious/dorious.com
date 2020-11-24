@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { 
   LinkedinFilled, 
   LinkedinOutlined, 
@@ -10,21 +10,33 @@ import {
 
 import "./icons.less";
 
-export default function Icons() {
+export function Icon({ children, ...rest }) {
   return (
-    <div className="icons">
-      <a href="https://www.linkedin.com/in/dorious/" rel="noreferrer" target="_blank">
-        <LinkedinFilled />
-        <LinkedinOutlined />
-      </a>
-      <a href="https://github.com/Dorious" rel="noreferrer" target="_blank">
-        <GithubFilled />
-        <GithubOutlined />
-      </a>
-      <a href="https://www.instagram.com/darius.arc/" rel="noreferrer" target="_blank">
-        <InstagramFilled />
-        <InstagramOutlined />
-      </a>
-    </div>
+    <a 
+      rel="noreferrer" 
+      target="_blank"
+      {...rest}
+    >
+      {children}
+    </a>
   )
 }
+
+export default memo(function Icons() {
+  return (
+    <div className="icons">
+      <Icon href="https://www.linkedin.com/in/dorious/">
+        <LinkedinFilled />
+        <LinkedinOutlined />
+      </Icon>
+      <Icon href="https://github.com/Dorious">
+        <GithubFilled />
+        <GithubOutlined />
+      </Icon>
+      <Icon href="https://www.instagram.com/darius.arc/">
+        <InstagramFilled />
+        <InstagramOutlined />
+      </Icon>
+    </div>
+  )
+});

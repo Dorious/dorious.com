@@ -16,6 +16,7 @@
     transform: rotateX(90deg);
     animation: qrOpen 3s ease-in-out 2s 1 normal forwards;
     color: #fff;
+    opacity: 0;
 
     &::after {
       content: '▲ download vcard';
@@ -47,13 +48,13 @@
 }
 
 @keyframes qrOpen {
-  0% { transform: rotateX(90deg); }
+  0% { transform: rotateX(90deg); opacity: 1; }
   20% { transform: rotateX(-25deg); }
   30% { transform: rotateX(18deg); }
-  50% { transform: rotateX(-8deg); }
+  50% { transform: rotateX(-5deg); }
   60% { transform: rotateX(5deg); }
   80% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); opacity: 1; }
 }
 
 @keyframes vcardOpen {

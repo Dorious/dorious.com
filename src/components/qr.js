@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import InlineSVG from "svg-inline-react";
 import QRCode from "qrcode-svg";
 
@@ -17,7 +17,7 @@ const SvgQr = new QRCode({
   swap: true,
 }).svg();
 
-export default function Qr() {
+export default memo(function Qr() {
   return (
     <div className="qr">
       <a href="/vcard.vcf">
@@ -25,4 +25,4 @@ export default function Qr() {
       </a>
     </div>
   )
-}
+});
