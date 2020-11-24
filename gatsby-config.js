@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `dorious.com, web, mobile, photography`,
-    description: `I make web/mobile apps from scratch, web sites, web consultancy, headshot photography, portraits... you name it :)`,
+    description: `I make web/mobile apps from scratch, web sites, web consultancy, front-end engineering, software engineering, headshot photography, portraits, retouching... you name it :)`,
     author: `@darius.arc`,
   },
   plugins: [
