@@ -1,28 +1,32 @@
 @import "../variables.less";
 
 .icons {
-  font-size: 4rem;
+  font-size: 5rem;
   position: absolute;
   top: 36rem;
   left: 50%;
-  margin-left: 36rem;
-  height: 20rem;
+  margin-left: 41rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 3;
   transform: translateZ(1.3rem);
 
+  @media (max-aspect-ratio: @responsive-aspect-step1) {
+    left: 48%;
+  }
+
   @media (max-aspect-ratio: @responsive-aspect-step3) {
     top: auto;
-    margin-left: 7rem;
+    margin-left: 9rem;
     bottom: 7rem;
   }
 
   & > a {
     display: inline-flex;
     color: #fff;
-    width: 4rem;
+    width: 5rem;
     overflow: hidden;
 
     & > span {
