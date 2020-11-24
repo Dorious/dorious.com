@@ -1,3 +1,5 @@
+@import "../variables.less";
+
 .noise {
   position: absolute;
   z-index: 10000;
@@ -5,12 +7,17 @@
   left: 0; 
   right: 0;
   bottom: 0;
+  height: 100vh;
   background: url(../images/grey-noise.png) 50% 50%;
   opacity: 0.15;
   pointer-events: none;
   animation-name: noise;
   animation-duration: 0.3s;
   animation-iteration-count: infinite;
+
+  @media (max-aspect-ratio: @responsive-aspect-step4) {
+    height: auto;
+  }
 }
 
 @keyframes noise {

@@ -29,8 +29,13 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100vh;
   overflow: hidden;
   transition: all 1s ease-out;
+
+  @media (max-aspect-ratio: @responsive-aspect-step4) {
+    height: auto;
+  }
 }
 
 @-moz-document url-prefix() { 
