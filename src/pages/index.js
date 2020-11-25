@@ -41,10 +41,10 @@ const IndexPage = () => {
         style={{perspectiveOrigin: `${perc[0]*100}% ${perc[1]*100}%`}}
       >
         <SEO title="Dariusz Arciszewski" keywords={keywords} />
+        <Backgrounds />
         <Description />
         <Qr />
         <Icons />
-        <Backgrounds />
       </div>
       <Noise />
     </>
