@@ -16,7 +16,7 @@
     & > span {
       display: inline-block;
       position: relative;
-      transform: translateY(6rem) scale(0.5);
+      transform: translateY(6rem) translateZ(0px) scale(0.5);
       transition: transform 0.5s ease-in-out;
       margin-left: -0.5rem;
 
@@ -57,21 +57,21 @@ span.@{prefix} {
   &-char {
     &-animate {
       animation: none ! important;
-      transform: translateY(0) scale(1) ! important;
+      transform: translateY(0) translateZ(0) scale(1) ! important;
 
       &-transform {
-        transform: translateY(-6rem) scale(1) ! important;
+        transform: translateY(-6rem) translateZ(0) scale(1) ! important;
       }
     }
   }
 }
 
 @keyframes bubbleChar {
-  0% { transform: translateY(6rem); }
-  100% {  transform: translateY(0) scale(1); }
+  0% { transform: translateY(6rem) translateZ(0) ; }
+  100% {  transform: translateY(0) translateZ(0) scale(1); }
 } 
 
 @keyframes scrollChar {
-  0% { transform: translateY(0rem) ! important; }
-  100% { transform: translateY(-6rem) ! important; }
+  0% { transform: translateY(0rem) translateZ(0) ! important; }
+  100% { transform: translateY(-6rem) translateZ(0) ! important; }
 }

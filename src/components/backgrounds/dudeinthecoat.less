@@ -13,7 +13,7 @@
       position: relative ! important;
       right: auto;
       margin-left: 50%; 
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateZ(0);
     }
   }
   
@@ -73,12 +73,12 @@
 
   &-blue {
     filter: brightness(0.6) sepia(1) hue-rotate(270deg) saturate(8);
-    transform: translateX(-2rem);
+    transform: translateX(-2rem) translateZ(0);
   }
 
   &-red {
     filter: brightness(0.6) sepia(1) hue-rotate(-20deg) saturate(8);
-    transform: translateX(0.5rem);
+    transform: translateX(0.5rem) translateZ(0);
   }
 
 }
